@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Trip Planner - Smart Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/ai-planner.css">
+  <link rel="stylesheet" href="../css/style.css"> 
+</head>
+<body class="planner-page">
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <header class="navbar">
+    <a href="home.html" class="brand">Smart Travel</a>
+
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="destination.html">Destinations</a></li>
+      <li><a href="hotel.html">Hotels</a></li>
+      <li><a href="tour.html">Tours</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="favorites.html">Favorites</a></li>
+    </ul>
+
+    <div class="nav-brand-right">
+      <a class="nav-btn" href="ai-planner.html">AI Planner</a>
+    </div>
+  </header>
+
+  <!-- ============================================
+       STUNNING HERO
+       ============================================ -->
+  <section class="planner-hero">
+    <!-- slow travel video background (aerial ocean view - different from home page) -->
+    <div class="planner-hero-video-wrap">
+      <video class="planner-hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" playbackRate="0.6">
+        <source src="https://videos.pexels.com/video-files/853908/853908-hd_1280_720_25fps.mp4" type="video/mp4">
+      </video>
+      <div class="planner-hero-video-overlay"></div>
+    </div>
+
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+
+    <!-- rising glitter particles -->
+    <div class="hero-particles">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- floating glass AI chips -->
+    <div class="hero-chip chip-1"><i class="fas fa-route"></i> Smart Itinerary</div>
+    <div class="hero-chip chip-2"><i class="fas fa-hotel"></i> Best Hotels</div>
+    <div class="hero-chip chip-3"><i class="fas fa-utensils"></i> Local Dining</div>
+
+    <div class="planner-hero-content">
+      <span class="planner-badge">
+        <i class="fas fa-wand-magic-sparkles"></i>
+        AI-Powered Travel Planner
+      </span>
+      <h1>
+        <em>Your perfect <span class="grad">dream trip</span></em>
+        crafted in seconds
+      </h1>
+      <p>
+        Tell us where, when and how you love to travel. Our intelligent
+        assistant instantly weaves hotels, food, hidden gems and must-see
+        sights into one seamless, personalised plan — made just for you.
+      </p>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>1M+</strong>
+          <span>Trips Planned</span>
+        </div>
+        <div class="hero-stat">
+          <strong>4.9</strong>
+          <span>Avg. Rating</span>
+        </div>
+        <div class="hero-stat">
+          <strong>120+</strong>
+          <span>Destinations</span>
+        </div>
+      </div>
+
+      <a href="#planner" class="hero-scroll">
+        Start Planning
+        <i class="fas fa-chevron-down scroll-arrow"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       THE PLANNER FORM (ALL TRIP NEEDS)
+       ============================================ -->
+  <div class="planner-wrap" id="planner">
+    <form class="planner-card" action="#" method="get">
+
+      <!-- ===== CARD INTRO ===== -->
+      <div class="planner-intro">
+        <div class="planner-intro-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h2>Tell Us About Your Dream Trip</h2>
+        <p>Answer a few quick questions and our AI will build your perfect itinerary.</p>
+      </div>
+
+      <!-- ===== STEP 1: BASICS ===== -->
+      <div class="step">
+        <div class="step-header">
+          <span class="step-badge">1</span>
+          <h2 class="step-title">Trip Basics</h2>
+        </div>
+        <p class="step-desc">Let's start with the essentials — where and when.</p>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="dest"><i class="fas fa-location-dot"></i> Destination</label>
+            <select id="dest" name="dest">
+              <option value="">Choose a destination</option>
+              <option value="paris">Paris, France</option>
+              <option value="tokyo">Tokyo, Japan</option>
+              <option value="bali">Bali, Indonesia</option>
+              <option value="dubai">Dubai, UAE</option>
+              <option value="maldives">Maldives</option>
+              <option value="rome">Rome, Italy</option>
+              <option value="bangkok">Bangkok, Thailand</option>
+              <option value="santorini">Santorini, Greece</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="start"><i class="fas fa-plane-departure"></i> Departure Date</label>
+            <input type="date" id="start" name="start">
+          </div>
+
+          <div class="field">
+            <label for="end"><i class="fas fa-plane-arrival"></i> Return Date</label>
+            <input type="date" id="end" name="end">
+          </div>
+
+          <div class="field">
+            <label for="days"><i class="fas fa-clock"></i> Number of Days</label>
+            <input type="number" id="days" name="days" min="1" max="90" placeholder="e.g. 7">
+          </div>
+
+          <div class="field">
+            <label for="travelers"><i class="fas fa-user-group"></i> Travelers</label>
+            <select id="travelers" name="travelers">
+              <option value="1">1 (Solo)</option>
+              <option value="2">2 (Couple)</option>
+              <option value="3">3</option>
+              <option value="4">4 (Family)</option>
+              <option value="5">5+ (Group)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="origin"><i class="fas fa-plane"></i> Departing From</label>
+            <input type="text" id="origin" name="origin" placeholder="e.g. New York, London">
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== STEP 2: BUDGET ===== -->
+      <div class="step" style="margin-top:44px;">
+        <div class="step-header">
+          <span class="step-badge">2</span>
+          <h2 class="step-title">Your Budget</h2>
+        </div>
+        <p class="step-desc">Pick a budget style and we'll match the best options.</p>
+
+        <div class="budget-row">
+          <label class="budget-option">
+            <input type="radio" name="budget" value="budget">
+            <span class="budget-box">
+              <i class="fas fa-wallet"></i>
+              <strong>Budget</strong>
+              <small>~$70 / day</small>
+            </span>
+          </label>
+          <label class="budget-option">
+            <input type="radio" name="budget" value="comfort" checked>
+            <span class="budget-box">
+              <i class="fas fa-star"></i>
+              <strong>Comfort</strong>
+              <small>~$150 / day</small>
+            </span>
+          </label>
+          <label class="budget-option">
+            <input type="radio" name="budget" value="luxury">
+            <span class="budget-box">
+              <i class="fas fa-crown"></i>
+              <strong>Luxury</strong>
+              <small>~$350 / day</small>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- ===== STEP 3: TRAVEL STYLE ===== -->
+      <div class="step" style="margin-top:44px;">
+        <div class="step-header">
+          <span class="step-badge">3</span>
+          <h2 class="step-title">Travel Style</h2>
+        </div>
+        <p class="step-desc">How do you like to travel?</p>
+
+        <div class="radio-row">
+          <label class="radio-option">
+            <input type="radio" name="style" value="relaxed" checked>
+            <span class="radio-box"><i class="fas fa-spa"></i> Relaxed</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="style" value="balanced">
+            <span class="radio-box"><i class="fas fa-scale-balanced"></i> Balanced</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="style" value="action">
+            <span class="radio-box"><i class="fas fa-bolt"></i> Action-Packed</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- ===== STEP 4: INTERESTS ===== -->
+      <div class="step" style="margin-top:44px;">
+        <div class="step-header">
+          <span class="step-badge">4</span>
+          <h2 class="step-title">Your Interests</h2>
+        </div>
+        <p class="step-desc">Choose everything that excites you — pick as many as you like.</p>
+
+        <div class="interest-grid">
+          <label class="interest-option">
+            <input type="checkbox" name="interest" value="food">
+            <span class="interest-box">
+              <i class="fas fa-utensils"></i>
+              <span class="interest-meta">
+                <strong>Food & Dining</strong>
+                <small>Local cuisine & street food</small>
+              </span>
+            </span>
+          </label>
+          <label class="interest-option">
+            <input type="checkbox" name="interest" value="culture">
+            <span class="interest-box">
+              <i class="fas fa-landmark"></i>
+              <span class="interest-meta">
+                <strong>Culture & History</strong>
+                <small>Museums & heritage</small>
+              </span>
+            </span>
+          </label>
+          <label class="interest-option">
+            <input type="checkbox" name="interest" value="adventure">
+            <span class="interest-box">
+              <i class="fas fa-person-hiking"></i>
+              <span class="interest-meta">
+                <strong>Adventure</strong>
+                <small>Hiking & activities</small>
+              </span>
+            </span>
+          </label>
+          <label class="interest-option">
+            <input type="checkbox" name="interest" value="beach">
+            <span class="interest-box">
+              <i class="fas fa-umbrella-beach"></i>
+              <span class="interest-meta">
+                <strong>Beach & Relax</strong>
+                <small>Sun, sand & water</small>
+              </span>
+            </span>
+          </label>
+          <label class="interest-option">
+            <input type="checkbox" name="interest" value="shopping">
+            <span class="interest-box">
+              <i class="fas fa-bag-shopping"></i>
+              <span class="interest-meta">
+                <strong>Shopping</strong>
+                <small>Markets & boutiques</small>
+              </span>
+            </span>
+          </label>
+          <label class="interest-option">
+            <input type="checkbox" name="interest" value="nature">
+            <span class="interest-box">
+              <i class="fas fa-tree"></i>
+              <span class="interest-meta">
+                <strong>Nature</strong>
+                <small>Parks & landscapes</small>
+              </span>
+            </span>
+          </label>
+          <label class="interest-option">
+            <input type="checkbox" name="interest" value="nightlife">
+            <span class="interest-box">
+              <i class="fas fa-martini-glass-citrus"></i>
+              <span class="interest-meta">
+                <strong>Nightlife</strong>
+                <small>Bars & nightlife</small>
+              </span>
+            </span>
+          </label>
+          <label class="interest-option">
+            <input type="checkbox" name="interest" value="family">
+            <span class="interest-box">
+              <i class="fas fa-children"></i>
+              <span class="interest-meta">
+                <strong>Family Friendly</strong>
+                <small>Fun for all ages</small>
+              </span>
+            </span>
+          </label>
+          <label class="interest-option">
+            <input type="checkbox" name="interest" value="photography">
+            <span class="interest-box">
+              <i class="fas fa-camera"></i>
+              <span class="interest-meta">
+                <strong>Photography</strong>
+                <small>Scenic & Instagram-worthy</small>
+              </span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- ===== STEP 5: EXTRA DETAILS ===== -->
+      <div class="step" style="margin-top:44px;">
+        <div class="step-header">
+          <span class="step-badge">5</span>
+          <h2 class="step-title">Any Extra Details?</h2>
+        </div>
+        <p class="step-desc">Tell us anything special — we'll include it in your plan.</p>
+
+        <div class="field">
+          <textarea name="notes" placeholder="e.g. We prefer quiet hotels, my wife is vegetarian, I'd love a day trip with ocean views, need wheelchair accessibility, birthday celebration..."></textarea>
+        </div>
+      </div>
+
+      <!-- ===== SUBMIT ===== -->
+      <div class="planner-submit">
+        <button class="generate-btn" type="submit">
+          <i class="fas fa-wand-magic-sparkles"></i>
+          Generate My Perfect Trip
+        </button>
+        <p class="planner-note">
+          <i class="fas fa-shield-halved"></i>
+          Free forever · No sign-up needed · Ready in seconds
+        </p>
+      </div>
+
+      <div class="planner-trust">
+        <span class="trust-item"><i class="fas fa-check-circle"></i> 100% Personalised</span>
+        <span class="trust-item"><i class="fas fa-check-circle"></i> Trusted by 1M+ travellers</span>
+        <span class="trust-item"><i class="fas fa-check-circle"></i> Hotels, food & more</span>
+      </div>
+    </form>
+  </div>
+
+  <!-- ============================================
+       PLAN PREVIEW (WHAT YOU GET)
+       ============================================ -->
+  <section class="plan-preview">
+    <div class="plan-preview-title">
+      <p class="section-label">What You Get</p>
+      <h2>A Complete <span>AI-Crafted</span> Itinerary</h2>
+    </div>
+
+    <!-- Day-by-day -->
+    <div class="plan-day-itinerary">
+      <div class="day-card">
+        <div class="day-card-header">
+          <h3><i class="fas fa-sun"></i> Day 1 — Arrival</h3>
+          <span class="day-icon"><i class="fas fa-plane"></i></span>
+        </div>
+        <ul>
+          <li><i class="fas fa-check"></i> Hotel check-in & rest</li>
+          <li><i class="fas fa-check"></i> Evening walking tour</li>
+          <li><i class="fas fa-check"></i> Welcome dinner at top restaurant</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-card-header">
+          <h3><i class="fas fa-sun"></i> Day 2 — Explore</h3>
+          <span class="day-icon"><i class="fas fa-landmark"></i></span>
+        </div>
+        <ul>
+          <li><i class="fas fa-check"></i> Famous landmarks & museums</li>
+          <li><i class="fas fa-check"></i> Local food market tasting</li>
+          <li><i class="fas fa-check"></i> Sunset viewpoint experience</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-card-header">
+          <h3><i class="fas fa-sun"></i> Day 3 — Departure</h3>
+          <span class="day-icon"><i class="fas fa-bag-shopping"></i></span>
+        </div>
+        <ul>
+          <li><i class="fas fa-check"></i> Shopping & souvenir time</li>
+          <li><i class="fas fa-check"></i> Relaxed brunch</li>
+          <li><i class="fas fa-check"></i> Airport transfer arranged</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="plan-columns">
+      <div class="plan-column">
+        <div class="plan-column-header">
+          <i class="fas fa-bed"></i>
+          <h3>Hotels & Stay</h3>
+        </div>
+        <ul class="plan-list">
+          <li><i class="fas fa-check"></i> Hand-picked to match budget</li>
+          <li><i class="fas fa-check"></i> Best location options</li>
+          <li><i class="fas fa-check"></i> Breakfast & amenities</li>
+        </ul>
+      </div>
+      <div class="plan-column">
+        <div class="plan-column-header">
+          <i class="fas fa-utensils"></i>
+          <h3>Food & Dining</h3>
+        </div>
+        <ul class="plan-list">
+          <li><i class="fas fa-check"></i> Must-try signature dishes</li>
+          <li><i class="fas fa-check"></i> Best local restaurants</li>
+          <li><i class="fas fa-check"></i> Dietary preferences respected</li>
+        </ul>
+      </div>
+      <div class="plan-column">
+        <div class="plan-column-header">
+          <i class="fas fa-map-location-dot"></i>
+          <h3>Activities</h3>
+        </div>
+        <ul class="plan-list">
+          <li><i class="fas fa-check"></i> Guided experiences</li>
+          <li><i class="fas fa-check"></i> Hidden gems & local tips</li>
+          <li><i class="fas fa-check"></i> Perfectly paced itinerary</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand">Smart Travel</div>
+        <p>Travel smarter with AI — hotels, food, destinations and everything in between.</p>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="destination.html">Destinations</a></li>
+            <li><a href="hotel.html">Hotels</a></li>
+            <li><a href="tour.html">Tours</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Smart Travel. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

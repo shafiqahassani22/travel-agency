@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations - Smart Travel</title>
+  <meta name="description" content="Browse hand-picked destinations around the world and let AI plan the perfect trip for you.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/destinationstyle.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dest-page">
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <header class="navbar">
+    <div class="brand">Smart Travel</div>
+
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="destination.html" class="active">Destinations</a></li>
+      <li><a href="hotel.html">Hotels</a></li>
+      <li><a href="tour.html">Tours</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="favorites.html">Favorites</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-brand-right">
+      <a class="nav-btn" href="ai-planner.html">AI Planner</a>
+      <a class="dashboard-btn" href="dashboard.html">Dashboard</a>
+    </div>
+  </header>
+
+
+  <!-- ============================================
+       HERO
+       a big picture with the page title on top
+       ============================================ -->
+  <section class="top" id="top">
+
+    <!-- the picture -->
+    <img class="pic" src="../images/dest/destination-hero.jpg"
+         alt="Hot air balloons flying over the valleys of Cappadocia at sunrise">
+
+    <!-- the dark layer that keeps the words readable -->
+    <div class="shade"></div>
+
+    <!-- three small glass labels that float on the picture -->
+    <div class="chip c1"><i class="fas fa-mountain-sun"></i> Mountain Escapes</div>
+    <div class="chip c2"><i class="fas fa-umbrella-beach"></i> Island Resorts</div>
+    <div class="chip c3"><i class="fas fa-city"></i> City Breaks</div>
+
+    <!-- all the words in the middle -->
+    <div class="inner">
+
+      <span class="pill">
+        <i class="fas fa-compass"></i>
+        120+ Curated Destinations
+      </span>
+
+      <h1 class="title">
+        Find the place that <span>feels like you</span>
+      </h1>
+
+      <p class="text">
+        From quiet mountain lakes to glowing city nights and warm island sunsets.
+        Pick a destination and our AI builds the whole trip around it: stays, food
+        and the places worth crossing the world for.
+      </p>
+
+      <!-- the search box -->
+      <form class="search" action="ai-planner.html" method="get">
+        <div class="box">
+          <i class="fas fa-magnifying-glass"></i>
+          <input type="text" name="destination" aria-label="Search a destination"
+                 placeholder="Search a destination e.g. Cappadocia, Bali, Singapore">
+          <button type="submit" class="go">
+            Explore <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- the three numbers -->
+      <div class="nums">
+        <div class="num">
+          <strong>120+</strong>
+          <span>Destinations</span>
+        </div>
+        <div class="num">
+          <strong>48</strong>
+          <span>Countries</span>
+        </div>
+        <div class="num">
+          <strong>4.9</strong>
+          <span>Avg. Rating</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- the round button that scrolls down -->
+    <a class="down" href="#list" aria-label="Scroll to the destinations">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+
+    <!-- where the picture was taken -->
+    <p class="note"><i class="fas fa-camera-retro"></i> Cappadocia, Turkey</p>
+
+  </section>
+
+
+  <!-- ============================================
+       FILTER BUTTONS + THE CARDS
+       ============================================ -->
+  <div class="list" id="list">
+
+    <div class="bar">
+      <div class="bar-in">
+
+        <div class="tabs" role="group" aria-label="Filter the destinations">
+          <label class="tab">
+            <input type="radio" name="kind" id="all" value="all" checked>
+            <span><i class="fas fa-globe"></i> All</span>
+          </label>
+          <label class="tab">
+            <input type="radio" name="kind" id="beach" value="beach">
+            <span><i class="fas fa-umbrella-beach"></i> Beaches</span>
+          </label>
+          <label class="tab">
+            <input type="radio" name="kind" id="mountain" value="mountain">
+            <span><i class="fas fa-mountain"></i> Mountains</span>
+          </label>
+          <label class="tab">
+            <input type="radio" name="kind" id="city" value="city">
+            <span><i class="fas fa-city"></i> Cities</span>
+          </label>
+          <label class="tab">
+            <input type="radio" name="kind" id="culture" value="culture">
+            <span><i class="fas fa-landmark"></i> Culture</span>
+          </label>
+        </div>
+
+        <!-- this sentence is changed by the script -->
+        <p class="count">Showing <strong>5</strong> places</p>
+
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <!-- ---------- card 1 ---------- -->
+      <article class="card wide" data-type="culture mountain">
+        <div class="pic">
+          <img src="../images/%D8%B9%DA%A9%D8%B3%20%D9%87%D8%A7%DB%8C%20%D8%B3%D9%81%D8%B1/set-colored-balloons-flying-ground-cappadocia-turkey.jpg"
+               alt="Hot air balloons flying over the valleys of Cappadocia">
+          <span class="badge"><i class="fas fa-location-dot"></i> Culture</span>
+          <a class="heart" href="favorites.html" aria-label="Save Cappadocia to favorites">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+
+        <div class="info">
+          <h3 class="name">Cappadocia</h3>
+          <p class="where"><i class="fas fa-map-marker-alt"></i> Turkey &middot; Middle East</p>
+          <p class="text">
+            Sunrise over a landscape of fairy chimneys and cave towns, then a day
+            drifting between valleys in a hot air balloon. Our AI plans the sunrise
+            flights, the cave hotels and the long table dinners underneath.
+          </p>
+          <ul class="tags">
+            <li>Balloon flights</li>
+            <li>Cave hotels</li>
+            <li>UNESCO</li>
+            <li>Slow travel</li>
+          </ul>
+          <div class="foot">
+            <span class="star"><i class="fas fa-star"></i> <strong>4.9</strong> (1.2k)</span>
+            <span class="price">from <b>$890</b></span>
+            <a class="go" href="ai-planner.html">Plan it <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------- card 2 ---------- -->
+      <article class="card" data-type="beach">
+        <div class="pic">
+          <img src="../images/%D8%B9%DA%A9%D8%B3%20%D9%87%D8%A7%DB%8C%20%D8%B3%D9%81%D8%B1/sunset-pool.jpg"
+               alt="Infinity pool looking over the ocean at sunset">
+          <span class="badge"><i class="fas fa-location-dot"></i> Beach</span>
+          <a class="heart" href="favorites.html" aria-label="Save Bali to favorites">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+
+        <div class="info">
+          <h3 class="name">Bali</h3>
+          <p class="where"><i class="fas fa-map-marker-alt"></i> Indonesia &middot; Asia</p>
+          <p class="text">
+            Rice terraces, reef breaks and villas that open straight onto the sand.
+            The AI matches your stay to your surf level, then adds the warungs
+            everyone actually goes to.
+          </p>
+          <ul class="tags">
+            <li>Beach clubs</li>
+            <li>Surf</li>
+            <li>Villas</li>
+          </ul>
+          <div class="foot">
+            <span class="star"><i class="fas fa-star"></i> <strong>4.8</strong> (2.4k)</span>
+            <span class="price">from <b>$740</b></span>
+            <a class="go" href="ai-planner.html">Plan it <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------- card 3 ---------- -->
+      <article class="card" data-type="city">
+        <div class="pic">
+          <img src="../images/%D8%B9%DA%A9%D8%B3%20%D9%87%D8%A7%DB%8C%20%D8%B3%D9%81%D8%B1/cityscape-night-singapore.jpg"
+               alt="Singapore skyline glowing at night">
+          <span class="badge"><i class="fas fa-location-dot"></i> City</span>
+          <a class="heart" href="favorites.html" aria-label="Save Singapore to favorites">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+
+        <div class="info">
+          <h3 class="name">Singapore</h3>
+          <p class="where"><i class="fas fa-map-marker-alt"></i> Singapore &middot; Asia</p>
+          <p class="text">
+            Hawker stalls, garden domes and a skyline that never switches off.
+            Three days, one easy transport card and a food list the AI builds
+            around what you actually like to eat.
+          </p>
+          <ul class="tags">
+            <li>Food markets</li>
+            <li>Night life</li>
+            <li>Family</li>
+          </ul>
+          <div class="foot">
+            <span class="star"><i class="fas fa-star"></i> <strong>4.7</strong> (1.9k)</span>
+            <span class="price">from <b>$980</b></span>
+            <a class="go" href="ai-planner.html">Plan it <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------- card 4 ---------- -->
+      <article class="card" data-type="mountain">
+        <div class="pic">
+          <img src="../images/%D8%B9%DA%A9%D8%B3%20%D9%87%D8%A7%DB%8C%20%D8%B3%D9%81%D8%B1/scenic-view-mountains-lake.jpg"
+               alt="Snowy mountain peaks reflected in a clear alpine lake">
+          <span class="badge"><i class="fas fa-location-dot"></i> Mountain</span>
+          <a class="heart" href="favorites.html" aria-label="Save Swiss Alps to favorites">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+
+        <div class="info">
+          <h3 class="name">Swiss Alps</h3>
+          <p class="where"><i class="fas fa-map-marker-alt"></i> Switzerland &middot; Europe</p>
+          <p class="text">
+            Glacier water, cable cars and a hiking route for every level. Tell the AI
+            how many days you have and it builds the mountain day trips around the
+            weather, not the tourist queue.
+          </p>
+          <ul class="tags">
+            <li>Hiking</li>
+            <li>Lakes</li>
+            <li>Train travel</li>
+          </ul>
+          <div class="foot">
+            <span class="star"><i class="fas fa-star"></i> <strong>4.9</strong> (980)</span>
+            <span class="price">from <b>$1,250</b></span>
+            <a class="go" href="ai-planner.html">Plan it <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ---------- card 5 ---------- -->
+      <article class="card" data-type="city">
+        <div class="pic">
+          <img src="../images/%D8%B9%DA%A9%D8%B3%20%D9%87%D8%A7%DB%8C%20%D8%B3%D9%81%D8%B1/amazing-shot-gardens-by-bay-singapore.jpg"
+               alt="Gardens by the Bay supertrees lit up at night">
+          <span class="badge"><i class="fas fa-location-dot"></i> City</span>
+          <a class="heart" href="favorites.html" aria-label="Save Gardens by the Bay to favorites">
+            <i class="far fa-heart"></i>
+          </a>
+        </div>
+
+        <div class="info">
+          <h3 class="name">Gardens by the Bay</h3>
+          <p class="where"><i class="fas fa-map-marker-alt"></i> Singapore &middot; Asia</p>
+          <p class="text">
+            A forest of steel supertrees, cooled by one of the world's longest
+            indoor waterfalls. An easy half-day add-on to any Singapore stay, and
+            the AI times it for the lights.
+          </p>
+          <ul class="tags">
+            <li>Gardens</li>
+            <li>Photography</li>
+            <li>Half day</li>
+          </ul>
+          <div class="foot">
+            <span class="star"><i class="fas fa-star"></i> <strong>4.8</strong> (1.1k)</span>
+            <span class="price">from <b>$32</b></span>
+            <a class="go" href="ai-planner.html">Plan it <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================
+       THINGS TO SORT OUT BEFORE YOU GO
+       ============================================ -->
+  <section class="extra">
+    <div class="section-header">
+      <p class="section-label">Before You Go</p>
+      <h2 class="section-title">Everything Around Your <span>Destination</span></h2>
+    </div>
+
+    <div class="extra-grid">
+
+      <div class="extra-item">
+        <img src="../images/%D8%B9%DA%A9%D8%B3%20%D9%87%D8%A7%DB%8C%20%D8%B3%D9%81%D8%B1/travel-bags-airport.jpg"
+             alt="Suitcases and travel bags waiting at the airport">
+        <div class="info">
+          <div class="icon"><i class="fas fa-plane-departure"></i></div>
+          <h3 class="name">Flights &amp; Transfers</h3>
+          <p class="text">The AI pairs your dates with flights and airport transfers that actually connect.</p>
+        </div>
+      </div>
+
+      <div class="extra-item">
+        <img src="../images/%D8%B9%DA%A9%D8%B3%20%D9%87%D8%A7%DB%8C%20%D8%B3%D9%81%D8%B1/cook-slices-meatloaf-coated-with-mashed-potatoes.jpg"
+             alt="A freshly served plated meal on a dining table">
+        <div class="info">
+          <div class="icon"><i class="fas fa-utensils"></i></div>
+          <h3 class="name">Food Worth The Flight</h3>
+          <p class="text">Local dishes, street food stops and the one restaurant to book before you fly.</p>
+        </div>
+      </div>
+
+      <div class="extra-item">
+        <img src="../images/%D8%B9%DA%A9%D8%B3%20%D9%87%D8%A7%DB%8C%20%D8%B3%D9%81%D8%B1/restaurant-hall-with-bright-color-sitting-furniturs-panoramic-windows.jpg"
+             alt="Bright restaurant hall with panoramic windows">
+        <div class="info">
+          <div class="icon"><i class="fas fa-hotel"></i></div>
+          <h3 class="name">Stays With A View</h3>
+          <p class="text">Hand-picked hotels in the right district, matched to your budget and your taste.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       GREEN BOX WITH THE AI BUTTON
+       ============================================ -->
+  <section class="cta-box">
+    <div class="cta-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+    <h2>Liked a place? Let <span>AI build the trip</span></h2>
+    <p class="text">
+      Choose a destination and our planner turns it into a full itinerary &mdash;
+      hotels, food, activities and the little details in between.
+    </p>
+    <a class="go" href="ai-planner.html">
+      Plan This Trip <i class="fas fa-arrow-right"></i>
+    </a>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand">Smart Travel</div>
+        <p>Travel smarter with AI find hotels, food, destinations and everything in between.</p>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="destination.html">Destinations</a></li>
+            <li><a href="hotel.html">Hotels</a></li>
+            <li><a href="tour.html">Tours</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Smart Travel. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>
